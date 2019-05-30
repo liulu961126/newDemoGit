@@ -1,3 +1,5 @@
+package thethreepag;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package thethreepag;
+
 import java.util.Scanner;
 
 /**

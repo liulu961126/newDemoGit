@@ -1,3 +1,5 @@
+package thethreepag;
+
 @SuppressWarnings("all")
 public class DemoPush {
     public static void main(String[] args) {
