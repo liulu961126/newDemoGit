@@ -1,5 +1,7 @@
 package thefourPag;
 
+import java.util.Date;
+
 /**
  * @author 六诗人
  * @title: EmployeeTest
@@ -20,7 +22,14 @@ public class EmployeeTest {
         }
         //展示
         for (Employee item : employees) {
-            System.out.println(item.getName() + "工资" + item.getSalary() + "出生时间" + item.getHireDay());
+            System.out.println(item.getName() + "工资" + item.getSalary() + "出生时间" + item.getHireDay()+"编号"+item.getId());
         }
+        //不要使用get方法返回一个可以变化对象
+        //例如
+        Employee employee = new Employee("张三", 1231, 1878, 12, 12);
+        employee.setTestDate(new Date());
+        Date date = employee.getTestDate();
+        date.setTime(28872923);
+        System.out.println(employee.getTestDate()+"  "+Employee.getNextId());
     }
 }
