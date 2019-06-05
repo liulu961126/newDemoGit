@@ -11,6 +11,16 @@ package thefivePag;
 public class Manager extends Employee {
     private double bouns;
 
+    @Override
+    public boolean equals(Object otherObject) {//子类重写父类方法,比较的话得先比较父类方法,最后比较子类方法
+        if (!super.equals(otherObject)) {
+            return false;
+        }
+
+        Manager manager = (Manager) otherObject;
+        return this.bouns == manager.bouns;
+    }
+
     public double getBouns() {
         return bouns;
     }

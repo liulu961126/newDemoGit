@@ -1,6 +1,7 @@
 package thefivePag;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * @author 六诗人
@@ -39,7 +40,7 @@ public class Employee extends Person {
 
     @Override
     public String getDescription() {
-        return String.format("an employeee with a salary of $%.2f",salary);
+        return String.format("an employeee with a salary of $%.2f", salary);
     }
 
     public Employee(String name) {
@@ -64,4 +65,19 @@ public class Employee extends Person {
         salary += raise;
     }
 
+    /***
+     * TODO类的比较方法自己实现
+     * @param otherObject
+     * @return
+     */
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) return true;
+        if (otherObject == null) return false;
+        if (this.getClass() != otherObject.getClass()) return false;
+        Employee employee = (Employee) otherObject;
+        //使用Objects的equals方法是为了解决两个对象的name都为空的可能
+        return Objects.equals(this.getName(), employee.getName()) && this.salary == employee.salary && this.hireDay.equals(employee.hireDay);
+    }
+
 }
+
