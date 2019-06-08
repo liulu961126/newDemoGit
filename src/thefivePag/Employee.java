@@ -79,5 +79,16 @@ public class Employee extends Person {
         return Objects.equals(this.getName(), employee.getName()) && this.salary == employee.salary && this.hireDay.equals(employee.hireDay);
     }
 
+    /***
+     * TODO重写equals方法就必须得重写hashCode方法让它们返回相同的hashCode值
+     * @return
+     */
+    public int hashCode() {
+        return Objects.hash(getName(), getSalary(), getHireDay());
+    }
+
+    public String toString() {
+        return getClass().getName()+"[name=" + getName() + ",salary=" + getSalary() + ",hireDay=" + getHireDay() + "]";
+    }
 }
 
