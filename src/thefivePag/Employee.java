@@ -11,7 +11,7 @@ import java.util.Objects;
  * @date 2019/6/1下午 3:08
  */
 @SuppressWarnings("all")
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee> {
 
     private double bonus;//奖金
     private double salary;//薪资
@@ -88,7 +88,12 @@ public class Employee extends Person {
     }
 
     public String toString() {
-        return getClass().getName()+"[name=" + getName() + ",salary=" + getSalary() + ",hireDay=" + getHireDay() + "]";
+        return getClass().getName() + "[name=" + getName() + ",salary=" + getSalary() + ",hireDay=" + getHireDay() + "]";
+    }
+
+    @Override
+    public int compareTo(Employee o) {//根据奖金比较两个对象的大小
+        return Double.compare(salary, o.salary);
     }
 }
 
