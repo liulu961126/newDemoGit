@@ -11,7 +11,7 @@ import java.util.Objects;
  * @date 2019/6/1下午 3:08
  */
 @SuppressWarnings("all")
-public class Employee extends Person implements Comparable<Employee> {
+public class Employee extends Person implements Comparable<Employee> , Cloneable{
 
     private double bonus;//奖金
     private double salary;//薪资
@@ -94,6 +94,13 @@ public class Employee extends Person implements Comparable<Employee> {
     @Override
     public int compareTo(Employee o) {//根据奖金比较两个对象的大小
         return Double.compare(salary, o.salary);
+    }
+
+    @Override
+    public Employee clone() throws CloneNotSupportedException {
+        Employee employee=(Employee)super.clone();
+        employee.hireDay= hireDay;
+        return employee;
     }
 }
 
